@@ -2,6 +2,8 @@
     "name": "node-red-openfaas",
     "version": "1.0.0",
     "description": "Call your OpenFaaS function from Node RED",
+    "license": "MIT",
+    "repository": "muka/node-red-openfaas",
     "main": "",
     "scripts": {
         "release": "./node_modules/standard-version/bin/cli.js --release-as minor"
