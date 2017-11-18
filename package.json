@@ -1,26 +1,25 @@
 {
-    "name": "node-red-openfaas",
-    "version": "1.0.0",
-    "description": "Call your OpenFaaS function from Node RED",
-    "license": "MIT",
-    "repository": "muka/node-red-openfaas",
-    "main": "",
-    "scripts": {
-        "release": "./node_modules/standard-version/bin/cli.js --release-as minor"
-    },
-    "author": "Luca Capra <luca.capra@gmail.com>",
-    "license": "MIT",
-    "node-red": {
-        "nodes": {
-            "openfaas": "openfaas.js"
-        }
-    },
-    "devDependencies": {
-        "eslint": "^4.11.0",
-        "standard-version": "^4.2.0"
-    },
-    "dependencies": {
-        "request": "^2.83.0",
-        "request-promise": "^4.2.2"
+  "name": "node-red-openfaas",
+  "version": "1.1.0",
+  "description": "Call your OpenFaaS function from Node RED",
+  "license": "MIT",
+  "repository": "muka/node-red-openfaas",
+  "main": "",
+  "scripts": {
+    "release": "./node_modules/standard-version/bin/cli.js --release-as minor"
+  },
+  "author": "Luca Capra <luca.capra@gmail.com>",
+  "node-red": {
+    "nodes": {
+      "openfaas": "openfaas.js"
     }
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "standard-version": "^4.2.0"
+  },
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
 }
