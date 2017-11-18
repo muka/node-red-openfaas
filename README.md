@@ -39,6 +39,7 @@ Use the import tool in node-red to use the flow
 ## TODO
 
 - Add URL and authentication as a config node
+- Use [node-openfaas](https://github.com/openfaas-incubator/node-openfaas)
 - Add a write & fire node to directly spawn function from nodered (implies build & deploy from CLI)
 
 ## License
