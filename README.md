@@ -19,7 +19,8 @@ This example will watch a file on your disk and render it with the `func_markdow
 
 ### Example
 
-![editor](https://raw.githubusercontent.com/muka/node-red-openfaas/master/img/editor.png) ![result](https://raw.githubusercontent.com/muka/node-red-openfaas/master/img/result.png)
+![editor](https://github.com/muka/node-red-openfaas/blob/master/img/editor.png?raw=true)
+ ![result](https://github.com/muka/node-red-openfaas/blob/master/img/result.png?raw=true)
 
 ### Usage
 
