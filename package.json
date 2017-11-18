@@ -1,0 +1,23 @@
+{
+    "name": "node-red-faas",
+    "version": "1.0.0",
+    "description": "openfaas for node red",
+    "main": "",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Luca Capra <luca.capra@gmail.com>",
+    "license": "MIT",
+    "node-red": {
+        "nodes": {
+            "faas": "faas.js"
+        }
+    },
+    "devDependencies": {
+        "eslint": "^4.11.0"
+    },
+    "dependencies": {
+        "request": "^2.83.0",
+        "request-promise": "^4.2.2"
+    }
+}

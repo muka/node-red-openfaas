@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    RED.nodes.registerType('faas',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name || "faas function";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="faas">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server"><i class=""></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="http://127.0.0.1:8080">
+    </div>
+    <div class="form-row">
+        <label for="node-input-image"><i class=""></i> Image</label>
+        <input type="text" id="node-input-image" placeholder="Image name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-language"><i class=""></i> Language</label>
+        <select id="node-input-language" placeholder="">
+            <option>csharp</option>
+            <option>go-armhf</option>
+            <option>go</option>
+            <option>node</option>
+            <option>node-arm64</option>
+            <option>node-armhf</option>
+            <option>node</option>
+            <option>python-armhf</option>
+            <option>python</option>
+            <option>python3</option>
+            <option>ruby</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-body"><i class=""></i> Function body</label>
+        <textarea id="node-input-body" placeholder="" style="width:100%;height:240px;"></textarea>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="faas">
+    <p>Create and invoke functions</p>
+</script>
