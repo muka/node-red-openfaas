@@ -1,7 +1,7 @@
 {
     "name": "node-red-openfaas",
     "version": "1.0.0",
-    "description": "OpenFaaS for Node RED",
+    "description": "Call your OpenFaaS function from Node RED",
     "main": "",
     "scripts": {
         "release": "./node_modules/standard-version/bin/cli.js --release-as minor"

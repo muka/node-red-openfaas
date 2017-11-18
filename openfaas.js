@@ -40,18 +40,18 @@ module.exports = function(RED) {
         const node = this
 
         node.on('input', function(msg) {
-
             const payload = tryParse(msg.payload)
             const json = payload !== msg.payload
             const name = node.name
-
             functionExists({name, uri}).then((exists) => {
                 if(exists) {
                     return functionInvoke({uri, name, payload, json})
-                        .then((payload) => node.send({ payload }))
+                        .then((payload) => {
+                            msg.payload = payload
+                            node.send(msg)
+                        })
                 }
             }).catch((e) => node.error(e.message))
-
         })
     }
 
