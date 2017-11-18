@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('faas',{
+    RED.nodes.registerType('openfaas',{
         category: 'function',
         color: '#a6bbcf',
         defaults: {
@@ -7,22 +7,38 @@
         },
         inputs:1,
         outputs:1,
-        icon: "file.png",
+        icon: "function.png",
+        color: "#C0DEED",
         label: function() {
-            return this.name || "faas function";
-        }
+            return this.name || "OpenFaaS function";
+        },
+        // oneditprepare: function(ev) {
+        //     jQuery(function($) {
+        //         var urlfield = $("#node-input-server")
+        //         var url = urlfield.val() ? urlfield.val() : urlfield.attr('placeholder')
+        //         console.warn(url);
+        //         $.getJSON(url)
+        //             .then(function(list){
+        //                 console.warn(list);
+        //             })
+        //             .catch(function(e){
+        //                 console.warn(e);
+        //             })
+        //     })
+        // }
     });
 </script>
 
-<script type="text/x-red" data-template-name="faas">
+<script type="text/x-red" data-template-name="openfaas">
     <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <label for="node-input-name"><i class=""></i> Function Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
     <div class="form-row">
         <label for="node-input-server"><i class=""></i> Server</label>
         <input type="text" id="node-input-server" placeholder="http://127.0.0.1:8080">
     </div>
+    <!--
     <div class="form-row">
         <label for="node-input-image"><i class=""></i> Image</label>
         <input type="text" id="node-input-image" placeholder="Image name">
@@ -47,8 +63,9 @@
         <label for="node-input-body"><i class=""></i> Function body</label>
         <textarea id="node-input-body" placeholder="" style="width:100%;height:240px;"></textarea>
     </div>
+    -->
 </script>
 
-<script type="text/x-red" data-help-name="faas">
+<script type="text/x-red" data-help-name="openfaas">
     <p>Create and invoke functions</p>
 </script>

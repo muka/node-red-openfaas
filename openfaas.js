@@ -1,21 +1,13 @@
 
 const rp = require('request-promise')
 
-
 const functionInvoke = ({uri, name, payload, json}) => {
     return rp({
         uri: uri + '/function/' + name,
         method: 'POST',
         body: payload,
         json: json
-    }).then((response) => {
-        try {
-            response = JSON.parse(response)
-        } catch(e) {
-            //
-        }
-        return Promise.resolve(response)
-    })
+    }).then((response) => Promise.resolve(tryParse(response)))
 }
 
 const functionList = ({uri}) => {
@@ -40,7 +32,7 @@ const tryParse = (json) => {
 
 module.exports = function(RED) {
 
-    function faas(config) {
+    function OpenFaaS(config) {
 
         RED.nodes.createNode(this, config)
 
@@ -56,15 +48,12 @@ module.exports = function(RED) {
             functionExists({name, uri}).then((exists) => {
                 if(exists) {
                     return functionInvoke({uri, name, payload, json})
-                        .then((r) => node.send({ payload: tryParse(r) }))
-                } else {
-                    //create
+                        .then((payload) => node.send({ payload }))
                 }
-
-            })
+            }).catch((e) => node.error(e.message))
 
         })
     }
 
-    RED.nodes.registerType('faas', faas)
+    RED.nodes.registerType('openfaas', OpenFaaS)
 }
